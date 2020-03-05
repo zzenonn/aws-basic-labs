@@ -222,6 +222,8 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
   </p>
 </details>
 
+The complete architecture you deployed is:
+![architecture](__assets/architecture.png)
 
 ### 4. Connect to your instance via SSH (Optional)
 
