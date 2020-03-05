@@ -76,6 +76,97 @@ The wizard has provisioned a VPC with a public subnet and a private subnet in th
 
 ![region selection](__assets/task1.png)
 
+### 2. Create Additional Subnets
+
+In this task, you will create two additional subnets in a second Availability Zone. This is useful for creating resources in multiple Availability Zones to provide _High Availability_.
+
+<details>
+  <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
+  <p>
+
+11. In the left navigation pane, click **Subnets**.
+
+    First, you will create a second Public Subnet.
+
+12. Click <span id="ssb_blue">Create subnet</span> then configure:
+
+    - **Name tag:** `Public Subnet 2`
+    - **VPC:** _Lab VPC_
+    - **Availability Zone:** Select the *second* Availability Zone
+    - **IPv4 CIDR block:** `10.0.2.0/24`
+
+    The subnet will have all IP addresses starting with **10.0.2.x**.
+
+13. Click <span id="ssb_blue">Create</span> then click <span id="ssb_blue">Close</span>
+
+    You will now create a second Private Subnet.
+
+14. Click <span id="ssb_blue">Create subnet</span> then configure:
+
+    - **Name tag:** `Private Subnet 2`
+    - **VPC:** _Lab VPC_
+    - **Availability Zone:** Select the *second* Availability Zone
+    - **CIDR block:** `10.0.3.0/24`
+
+    The subnet will have all IP addresses starting with **10.0.3.x**.
+
+15. Click <span id="ssb_blue">Create</span> then click <span id="ssb_blue">Close</span>
+
+    You will now configure the Private Subnets to route internet-bound traffic to the NAT Gateway so that resources in the Private Subnet are able to connect to the Internet, while still keeping the resources private. This is done by configuring a _Route Table_.
+
+    A *route table* contains a set of rules, called *routes*, that are used to determine where network traffic is directed. Each subnet in a VPC must be associated with a route table; the route table controls routing for the subnet.
+
+16. In the left navigation pane, click **Route Tables**.
+
+17. Select <i class="far fa-check-square"></i> the route table with **Main = Yes** and **VPC = Lab VPC**. (Expand the _VPC ID_ column if necessary to view the VPC name.)
+
+18. In the lower pane, click the **Routes** tab.
+
+    Note that **Destination 0.0.0.0/0** is set to **Target nat-xxxxxxxx**. This means that traffic destined for the internet (0.0.0.0/0) will be sent to the NAT Gateway. The NAT Gateway will then forward the traffic to the internet.
+
+    This route table is therefore being used to route traffic from Private Subnets. You will now add a name to the Route Table to make this easier to recognize in future.
+
+19. In the **Name** column for this route table, click the pencil <i class="fas fa-pencil-alt"></i> then type `Private Route Table` and click <i class="fas fa-check-circle"></i>
+
+20. In the lower pane, click the **Subnet Associations** tab.
+
+    You will now associate this route table to the Private Subnets.
+
+21. Click <span id="ssb_grey">Edit subnet associations</span>
+
+22. Select <i class="far fa-check-square"></i> both **Private Subnet 1** and **Private Subnet 2**.
+
+    <i class="fas fa-comment"></i> You can expand the _Subnet ID_ column to view the Subnet names.
+
+23. Click <span id="ssb_blue">Save</span>
+
+    You will now configure the Route Table that is used by the Public Subnets.
+
+24. Select <i class="far fa-check-square"></i> the route table with **Main = No** and **VPC = Lab VPC** (and deselect any other subnets).
+
+25. In the **Name** column for this route table, click the pencil <i class="fas fa-pencil-alt"></i> then type `Public Route Table`, and click <i class="fas fa-check-circle"></i>
+
+26. In the lower pane, click the **Routes** tab.
+
+    Note that **Destination 0.0.0.0/0** is set to **Target igw-xxxxxxxx**, which is the Internet Gateway. This means that internet-bound traffic will be sent straight to the internet via the Internet Gateway.
+
+    You will now associate this route table to the Public Subnets.
+
+27. Click the **Subnet Associations** tab.
+
+28. Click <span id="ssb_grey">Edit subnet associations</span>
+
+29. Select <i class="far fa-check-square"></i> both **Public Subnet 1** and **Public Subnet 2**.
+
+30. Click <span id="ssb_blue">Save</span>
+
+
+  </p>
+</details>
+
+
+    Your VPC now has public and private subnets configured in two Availability Zones:
+
 
 ### 2. Create an EC2 instance
 
