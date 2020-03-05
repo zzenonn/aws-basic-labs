@@ -31,9 +31,6 @@ that have access to the services listed above.
   Consult with them to confirm.
 
 - If you need an AWS account of your own, [you can create an AWS account here](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html).
-  
-All of the resources you will launch as part of this workshop are eligible for the AWS free tier if
-your account is less than 12 months old. [More information here](https://aws.amazon.com/free).
 
 ### SSH
 
