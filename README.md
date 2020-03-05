@@ -1,132 +1,5 @@
-<header>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
- </header>
- <!--include:Logo-->
- <style type="text/css">
-    body {
-    font-family:  "Roboto", "Helvetica", sans-serif;
-    font-size: 12pt;
-    font-color: Gray;
-    line-height: 1.6;
-    margin: 50px;
-    }
-    p {
-    list-style-position: inside;
-    }
-    #ssb_blue {
-    background-color: #257ACF;
-    font-weight: bold;
-    font-size: 90%;
-    color: white;
-    border-radius: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    white-space: nowrap;
-    }
-    #ssb_s3_blue {
-    background-color: #329ad6;
-    font-weight: bold;
-    font-size: 90%;
-    color: white;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    }
-    #ssb_voc_grey {
-    background-color: #F2F3F4;
-    font-weight: normal;
-    font-size: 90%;
-    color: black;
-    border-radius: 3px;
-    border: 1px solid gray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 6px;
-    padding-right: 6px;
-    white-space: nowrap;
-    }
-    #ssb_grey {
-    background-color: #DEDEDE;
-    font-weight: bold;
-    font-size: 90%;
-    color: #444;
-    position: relative;
-    top:-1px;
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #444;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    white-space: nowrap;
-    }
-    #ssl_alexa_ocean {
-    color: #00a0d2;
-    font-weight: bold;
-    }
-    #ssb_services {
-    background-color: #232f3e;
-    font-weight: bold;
-    font-size: 90%;
-    color: white;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-    }
-    #ssb_orange {
-    background-color:#ec7211;
-    font-weight:bold;
-    font-size:90%;
-    color:white;
-    padding-top:3px;
-    padding-bottom:3px;
-    padding-left:10px;
-    padding-right:10px;
-    white-space:
-    nowrap;
-    }
-    #ssbox_cloudformation_blue {
-    font-weight:bold;
-    background-color:#f1faff;
-    font-size:90%;
-    border-color:#00A1C9;
-    border-width:1px;
-    border-style:solid;
-    padding-top:3px;
-    padding-bottom:3px;
-    padding-left:10px;
-    padding-right:10px;
-    }
-    #ssb_ssm_white {
-    background-color:white;
-    font-weight:bold;
-    font-size:90%;
-    color:#545b64;
-    border-color:#545b64;
-    border-radius:2px;
-    border-width:1px;
-    border-style:solid;
-    padding-top:3px;
-    padding-bottom:3px;
-    padding-left:10px;
-    padding-right:10px;
-    }
- </style>
 
-
-Module 1: Deploy a webapp on EC2
+Module 1: Deploy a Network and Webapp on EC2
 ===
 
 In this module, we'll walk through how to create an EC2 instance on AWS, 
@@ -212,11 +85,11 @@ In this task, you will create two additional subnets in a second Availability Zo
   <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
   <p>
 
-11. In the left navigation pane, click **Subnets**.
+1. In the left navigation pane, click **Subnets**.
 
     First, you will create a second Public Subnet.
 
-12. Click <span id="ssb_blue">Create subnet</span> then configure:
+2. Click **Create subnet** then configure:
 
     - **Name tag:** `Public Subnet 2`
     - **VPC:** _Lab VPC_
@@ -225,11 +98,11 @@ In this task, you will create two additional subnets in a second Availability Zo
 
     The subnet will have all IP addresses starting with **10.0.2.x**.
 
-13. Click <span id="ssb_blue">Create</span> then click <span id="ssb_blue">Close</span>
+3. Click **Create** then click **Close**
 
     You will now create a second Private Subnet.
 
-14. Click <span id="ssb_blue">Create subnet</span> then configure:
+4. Click **Create subnet** then configure:
 
     - **Name tag:** `Private Subnet 2`
     - **VPC:** _Lab VPC_
@@ -238,55 +111,55 @@ In this task, you will create two additional subnets in a second Availability Zo
 
     The subnet will have all IP addresses starting with **10.0.3.x**.
 
-15. Click <span id="ssb_blue">Create</span> then click <span id="ssb_blue">Close</span>
+5. Click **Create** then click **Close**
 
     You will now configure the Private Subnets to route internet-bound traffic to the NAT Gateway so that resources in the Private Subnet are able to connect to the Internet, while still keeping the resources private. This is done by configuring a _Route Table_.
 
     A *route table* contains a set of rules, called *routes*, that are used to determine where network traffic is directed. Each subnet in a VPC must be associated with a route table; the route table controls routing for the subnet.
 
-16. In the left navigation pane, click **Route Tables**.
+6. In the left navigation pane, click **Route Tables**.
 
-17. Select <i class="far fa-check-square"></i> the route table with **Main = Yes** and **VPC = Lab VPC**. (Expand the _VPC ID_ column if necessary to view the VPC name.)
+7. Select the route table with **Main = Yes** and **VPC = Lab VPC**. (Expand the _VPC ID_ column if necessary to view the VPC name.)
 
-18. In the lower pane, click the **Routes** tab.
+8. In the lower pane, click the **Routes** tab.
 
     Note that **Destination 0.0.0.0/0** is set to **Target nat-xxxxxxxx**. This means that traffic destined for the internet (0.0.0.0/0) will be sent to the NAT Gateway. The NAT Gateway will then forward the traffic to the internet.
 
     This route table is therefore being used to route traffic from Private Subnets. You will now add a name to the Route Table to make this easier to recognize in future.
 
-19. In the **Name** column for this route table, click the pencil <i class="fas fa-pencil-alt"></i> then type `Private Route Table` and click <i class="fas fa-check-circle"></i>
+9. In the **Name** column for this route table, click the pencil then type `Private Route Table` and click the check mark
 
-20. In the lower pane, click the **Subnet Associations** tab.
+10. In the lower pane, click the **Subnet Associations** tab.
 
     You will now associate this route table to the Private Subnets.
 
-21. Click <span id="ssb_grey">Edit subnet associations</span>
+11. Click **Edit subnet associations**
 
-22. Select <i class="far fa-check-square"></i> both **Private Subnet 1** and **Private Subnet 2**.
+12. Select both **Private Subnet 1** and **Private Subnet 2**.
 
-    <i class="fas fa-comment"></i> You can expand the _Subnet ID_ column to view the Subnet names.
+     You can expand the _Subnet ID_ column to view the Subnet names.
 
-23. Click <span id="ssb_blue">Save</span>
+13. Click **Save**
 
     You will now configure the Route Table that is used by the Public Subnets.
 
-24. Select <i class="far fa-check-square"></i> the route table with **Main = No** and **VPC = Lab VPC** (and deselect any other subnets).
+14. Select = the route table with **Main = No** and **VPC = Lab VPC** (and deselect any other subnets).
 
-25. In the **Name** column for this route table, click the pencil <i class="fas fa-pencil-alt"></i> then type `Public Route Table`, and click <i class="fas fa-check-circle"></i>
+15. In the **Name** column for this route table, click the pencil then type `Public Route Table`, and tick the check mark
 
-26. In the lower pane, click the **Routes** tab.
+16. In the lower pane, click the **Routes** tab.
 
     Note that **Destination 0.0.0.0/0** is set to **Target igw-xxxxxxxx**, which is the Internet Gateway. This means that internet-bound traffic will be sent straight to the internet via the Internet Gateway.
 
     You will now associate this route table to the Public Subnets.
 
-27. Click the **Subnet Associations** tab.
+17. Click the **Subnet Associations** tab.
 
-28. Click <span id="ssb_grey">Edit subnet associations</span>
+18. Click **Edit subnet associations**
 
-29. Select <i class="far fa-check-square"></i> both **Public Subnet 1** and **Public Subnet 2**.
+19. Select both **Public Subnet 1** and **Public Subnet 2**.
 
-30. Click <span id="ssb_blue">Save</span>
+20. Click **Save**
 
 
   </p>
