@@ -64,16 +64,16 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
      1. For `Network`, the default VPC is selected.
      2. For `Auto-assign public IP`, make sure this is enabled.
      3. Expand advanced details, and in the Userdata section, pase the following text:
-     ```
-    #!/bin/bash
-    # Install Apache Web Server and PHP
-    yum install -y httpd mysql php
-    # Download Lab files
-    wget https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-TECESS/v4.6.8/lab-1-build-a-web-server/scripts/lab-app.zip
-unzip lab-app.zip -d /var/www/html/
-    # Turn on web server
-    chkconfig httpd on
-    service httpd start
+     ```bash
+     #!/bin/bash
+     # Install Apache Web Server and PHP
+     yum install -y httpd mysql php
+     # Download Lab files
+     wget https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-TECESS/v4.6.8/lab-1-build-a-web-server/scripts/lab-app.zip
+     unzip lab-app.zip -d /var/www/html/
+     # Turn on web server
+     chkconfig httpd on
+     service httpd start
      ```
   6. In the `Step 4` screen: specify `10 GB` for the root volume.
   7. In the `Step 5` screen: add a **Name** to your instance.
