@@ -166,9 +166,10 @@ In this task, you will create two additional subnets in a second Availability Zo
 </details>
 
 Your VPC now has public and private subnets configured in two Availability Zones:
+![architecture](__assets/task2.png)
 
 
-### 2. Create an EC2 instance
+### 3. Create an EC2 instance
 
 Amazon EC2 lets you create virtual machines on the AWS cloud. Once created, you can use
 it as you would use most any other computer or virtual machine. For this module,
@@ -222,7 +223,7 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
 </details>
 
 
-### 3. Connect to your instance via SSH
+### 4. Connect to your instance via SSH (Optional)
 
 Linux-based instances allow you to SSH into them --- once an SSH connection has been established,
 you can run commands from inside the machine, and effectively use the instance as if
