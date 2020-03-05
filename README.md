@@ -66,10 +66,16 @@ The wizard will also create a NAT Gateway, which is used to provide internet con
       - **Availability Zone**: Select the *first* Availability Zone (the same as used above)
       - **Private subnet name**: `Private Subnet 1`
       - **Elastic IP Allocation ID**: Click in the box and select the displayed IP address
+  5. Click **Create VPC**
 
 
   </p>
 </details>
+
+The wizard has provisioned a VPC with a public subnet and a private subnet in the same Availability Zone, together with route tables for each subnet:
+
+![region selection](__assets/task1.png)
+
 
 ### 2. Create an EC2 instance
 
