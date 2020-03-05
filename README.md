@@ -82,7 +82,6 @@ In this task, you will create a security group to allow your web server to acces
     </p>
     </details>
 &nbsp;
-
 ___
 ## Task 2: Create a DB Subnet Group
 
@@ -121,12 +120,10 @@ In this task, you will create a _DB subnet group_ that is used to tell RDS which
 5. Click **Create**
 
     You will use this DB subnet group when creating the database in the next task.
-
-&nbsp;
   </p>
 </details>
 
-    
+&nbsp;
 ___
 ## Task 3: Create an Amazon RDS DB Instance
 
