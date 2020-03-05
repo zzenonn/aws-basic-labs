@@ -1,4 +1,4 @@
-Module 1: Deploy a Node.js webapp on EC2
+Module 1: Deploy a webapp on EC2
 ===
 
 In this module, we'll walk through how to create an EC2 instance on AWS, 
@@ -40,7 +40,38 @@ You can choose which region you're working in at the top-right corner menu of th
 
 ![region selection](__assets/region-selection.png)
 
-### 1. Create an EC2 instance
+### 1. Create Your VPC
+
+AWS gives you full control of your networking environment through the VPC service
+
+#### High-level instructions
+In this task, you will use the VPC Wizard to create a VPC an Internet Gateway and two subnets in a single Availability Zone. An Internet gateway (IGW) is a VPC component that allows communication between instances in your VPC and the Internet.
+
+After creating a VPC, you can add subnets. Each subnet resides entirely within one Availability Zone and cannot span zones. If a subnet's traffic is routed to an Internet Gateway, the subnet is known as a public subnet. If a subnet does not have a route to the Internet gateway, the subnet is known as a private subnet.
+
+The wizard will also create a NAT Gateway, which is used to provide internet connectivity to EC2 instances in the private subnets.
+
+
+<details>
+  <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
+  <p>
+    
+  1. In the AWS Management Console, on the ***Services** menu, click **VPC**.
+  2. Click **Launch VPC Wizard**
+  3. In the left navigation pane, click **VPC with Public and Private Subnets** (the second option).
+  4. Click Select then configure:
+    - **VPC name**: `Lab VPC`
+    - **Availability Zone**: Select the *first* Availability Zone
+    - **Public subnet name**: `Public Subnet 1`
+    - **Availability Zone**: Select the *first* Availability Zone (the same as used above)
+    - **Private subnet name**: `Private Subnet 1`
+    - **Elastic IP Allocation ID**: Click in the box and select the displayed IP address
+
+
+  </p>
+</details>
+
+### 2. Create an EC2 instance
 
 Amazon EC2 lets you create virtual machines on the AWS cloud. Once created, you can use
 it as you would use most any other computer or virtual machine. For this module,
@@ -83,8 +114,7 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
   8. In the `Step 6` screen:
      1. Opt to create a new security group. **Important**: give your security group a unique name you'll remember.
      2. Add rules to allow `SSH` and `HTTP` from **anywhere** to your security group.
-     3. Also add a rule to allow `TCP` traffic through port `3000` from **anywhere** to your security group.
-     4. Click **Next**.
+     3. Click **Next**.
 
   9. In the `Step 7` screen: confirm all your settings.
   10. A dialog box should appear. Opt to **create a new keypair**. Give your keypair a name, a download it to your machine. Take note of where you saved it.
@@ -95,7 +125,7 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
 </details>
 
 
-### 2. Connect to your instance via SSH
+### 3. Connect to your instance via SSH
 
 Linux-based instances allow you to SSH into them --- once an SSH connection has been established,
 you can run commands from inside the machine, and effectively use the instance as if
@@ -136,89 +166,8 @@ has `chmod 400` permissions.
   ssh -i ~/keys/my-keyfile.pem ubuntu@127.0.0.1
   ```
   5. You should see a welcome message if an SSH connection has been successfully established.
-  </p>
-</details>
-
-
-### 3. Install the necessary software to run the server
-
-When you run commands in an SSH connection, you're actually running them inside your EC2 instance,
-and all the output is just fed back to your screen. It uses its own resources in the cloud, and 
-doesn't use the computer you're physically using except to show you what's happening.
-
-For example, when you run a script to make your EC2 instance download updates for its software,
-it's actually using its own dedicated network connections, and not the internet connection you're
-probably using now. Because of this, you'll probably find that your EC2 instance finishes tasks
-you instruct it to do **significantly faster** than if you did them on your own physical machine.
-
-In this step, we'll run all the commands required to setup and prepare our machine to run our server.
-As you'll discover in the next modules, there are ways so that you won't have to do this manually every time 
-you need an EC2 instance. 
-
-For now, bear with us, because we want to give you the full experience of bootstrapping a system on your own.
-
-
-#### High level instructions
-
-Update the software packages on your EC2 instance, and install **version 8.10** of Node.js on it.
-(Any version `> v8.10` should work, but since this workshop was built with v8.10 in mind, it's probably best to just use that.)
-
-Clone this repository into the machine as well, and install the `npm` dependencies for this solution.
-
-Finally you will need to install a terminal multiplexer so that your server doesn't stop when you terminate your SSH connection.
-If you don't have any preferences, `tmux` is a good choice.
-
-<details>
-  <summary><strong>Step-by-step instructions (click to expand):</strong></summary>
-  <p>
-    
-  1. Ensure you're inside an SSH connection to your instance.
   
-  2. Run `sudo apt-get update -y`. This will bring all installed packages on your instance up-to-date.
-  
-  3. To make installing a specific version of Node.js easier, we'll use `nvm` command to manage our Node versions for us.
-     You can [follow the instructions here](https://github.com/creationix/nvm#install--update-script) to install `nvm`, or just:
-
-  ```
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-  ```
-
-  4. After installing `nvm`, you will need to close the SSH connection by typing `exit`, then reconnect again.
-     Doing this step ensures that your SSH connection knows that there is a new `nvm` command available for you.
-
-  5. Install Node.js version 8.10 by running `nvm install 8.10`.
-  
-  6. Clone this repository onto youjr machine by running `git clone https://github.com/team-siklab/workshop-simple-webapp.git webapp`.
-  
-  7. We've already prepared this project repository to automatically install everything it needs to run a server.
-     `cd webapp` to go into your project directory, switch to the module branch with `git checkout module-01`, and then run `npm install` to install all the project dependencies.
-
-  8. When you terminate your SSH connection later, this will also stop all processes you've run (including your web server).
-     To prevent this from happening, we can use a terminal multiplexer to create a process separate from the one governing our connection.
-     Install `tmux`, a popular current-generation terminal multiplexer, by running `sudo apt-get install tmux -y`.
-
-  9. Run `tmux` to start the multiplexer.
-
-  > **Note**: By running `tmux`, you're creating a completely separate process from the one you're on with your SSH connection.
-  > - To go back to your original process (and leave whatever you're doing in `tmux` temporarily), just type `Ctrl+b` then `d` on your keyboard.
-  > - To bo back into the `tmux` process (and go back to what you were doing), just type `tmux a`.
-
-  10. Make sure you're in your project directory, then run `npm start` to start your web server. By default, your server will start listening on port `3000`.
-  
-  11. Locate your EC2 instance's **public IPv4 address** again, and confirm your web server is viewable by visiting `http://instance-ip-address:3000/hello` from a browser.
-
-  ```
-  e.g.
-
-  http://127.0.0.1:3000/hello
-  ```
-
-  12. If you get a meaningful response, congratulations, and you've successfully run a web server on your EC2 instance!
-  
-  13. Back in your terminal, let's exit your SSH connection while leaving your web server running.
-      Press `Ctrl-b` then `d` to detach your current `tmux` process, then type in `exit` to terminate your SSH connection.
-
-  14. Confirm that your web server is still viewable even when your SSH connection is closed.
+  6. Type `ss -ant` as confirm that your instance is listening on port 80.
   </p>
 </details>
 
