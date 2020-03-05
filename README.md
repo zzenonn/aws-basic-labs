@@ -60,12 +60,12 @@ The wizard will also create a NAT Gateway, which is used to provide internet con
   2. Click **Launch VPC Wizard**
   3. In the left navigation pane, click **VPC with Public and Private Subnets** (the second option).
   4. Click Select then configure:
-    - **VPC name**: `Lab VPC`
-    - **Availability Zone**: Select the *first* Availability Zone
-    - **Public subnet name**: `Public Subnet 1`
-    - **Availability Zone**: Select the *first* Availability Zone (the same as used above)
-    - **Private subnet name**: `Private Subnet 1`
-    - **Elastic IP Allocation ID**: Click in the box and select the displayed IP address
+      - **VPC name**: `Lab VPC`
+      - **Availability Zone**: Select the *first* Availability Zone
+      - **Public subnet name**: `Public Subnet 1`
+      - **Availability Zone**: Select the *first* Availability Zone (the same as used above)
+      - **Private subnet name**: `Private Subnet 1`
+      - **Elastic IP Allocation ID**: Click in the box and select the displayed IP address
 
 
   </p>
