@@ -93,11 +93,11 @@ In this task, you will create a _DB subnet group_ that is used to tell RDS which
   <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
   <p>
 
-1. On the <span id="ssb_services">Services <i class="fas fa-angle-down"></i></span> menu, click **RDS**.
+1. On the **Services** menu, click **RDS**.
 
 2. In the left navigation pane, click **Subnet groups**.
 
-    <i class="fas fa-exclamation-triangle"></i> If the navigation pane is not visible, click the <i class="fas fa-bars"></i> menu icon in the top-left corner.
+    If the navigation pane is not visible, click the <i class="fas fa-bars"></i> menu icon in the top-left corner.
 
 3. Click <span id="ssb_orange">Create DB Subnet Group</span> then configure:
 
@@ -114,11 +114,11 @@ In this task, you will create a _DB subnet group_ that is used to tell RDS which
 
     - **Availability zone:** Select the _second_ Availability Zone
     - **Subnet:** _10.0.3.0/24_
-    - Click <span id="ssb_grey">Add subnet</span>
+    - Click **Add subnet**
 
     These subnets should now be shown in the list: **10.0.1.0/24** and **10.0.3.0/24**
 
-5. Click <span id="ssb_orange">Create</span>
+5. Click **Create**
 
     You will use this DB subnet group when creating the database in the next task.
 
@@ -141,11 +141,11 @@ Amazon RDS ***Multi-AZ*** deployments provide enhanced availability and durabili
 
 1. In the left navigation pane, click **Databases**.
 
-2. Click <span id="ssb_orange">Create database</span>
+2. Click **Create database**
 
-    <i class="fas fa-exclamation-triangle"></i> If you see **Switch to the new database creation flow** at the top of the screen, please click it.
+    If you see **Switch to the new database creation flow** at the top of the screen, please click it.
 
-3. Select <i class="far fa-dot-circle"></i> **MySQL**.
+3. Select **MySQL**. (**Note: DO NOT SELECT AURORA**)
 
 4. Under **Settings**, configure:
 
@@ -156,7 +156,7 @@ Amazon RDS ***Multi-AZ*** deployments provide enhanced availability and durabili
 
 5. Under **DB instance size**, configure:
 
-     - Select <i class="far fa-dot-circle"></i> **Burstable classes (includes t classes)**.
+     - Select **Burstable classes (includes t classes)**.
      - Select _db.t3.micro_
 
 6. Under **Storage**, configure:
@@ -168,29 +168,29 @@ Amazon RDS ***Multi-AZ*** deployments provide enhanced availability and durabili
 
     - **Virtual Private Cloud (VPC):** _Lab VPC_
 
-8. Expand <i class="fas fa-caret-right"></i> **Additional connectivity configuration**, then configure:
+8. Expand **Additional connectivity configuration**, then configure:
 
     - For **Existing VPC security groups:** click _DB Security Group_ to highlight it in blue.
 
-9. Expand <i class="fas fa-caret-right"></i> **Additional configuration**, then configure:
+9. Expand **Additional configuration**, then configure:
 
     - **Initial database name:** `lab`
     - Uncheck **Enable automatic backups**.
     - Uncheck **Enable Enhanced monitoring**.
 
-    <i class="fas fa-comment"></i> This will turn off backups, which is not normally recommended, but will make the database deploy faster for this lab.
+    This will turn off backups, which is not normally recommended, but will make the database deploy faster for this lab.
 
-10. Click <span id="ssb_orange">Create database</span>
+10. Click **Create database**
 
     Your database will now be launched.
 
-    <i class="fas fa-comment"></i> If you receive an error that mentions "not authorized to perform: iam:CreateRole", make sure you unchecked _Enable Enhanced monitoring_ in the previous step.
+    If you receive an error that mentions "not authorized to perform: iam:CreateRole", make sure you unchecked _Enable Enhanced monitoring_ in the previous step.
 
 11. Click **lab-db** (click the link itself).
 
     You will now need to wait **approximately 4 minutes** for the database to be available. The deployment process is deploying a database in two different Availability zones.
 
-    <i class="fas fa-info-circle"></i> While you are waiting, you might want to review the [Amazon RDS FAQs](https://aws.amazon.com/rds/faqs/) or grab a cup of coffee.
+    While you are waiting, you might want to review the [Amazon RDS FAQs](https://aws.amazon.com/rds/faqs/) or grab a cup of coffee.
 
 12. Wait until **Info** changes to **Modifying** or **Available**.
 
@@ -210,17 +210,21 @@ ___
 
 In this task, you will open a web application running on your web server and configure it to use the database.
 
-15. To copy the **WebServer** IP address, click on the <span id="ssb_voc_grey">Details</span> drop down menu above these instructions, and then click <span id="ssb_voc_grey">Show</span>.
+<details>
+  <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
+  <p>
 
-16. Open a new web browser tab, paste the _WebServer_ IP address and press Enter.
+1. To copy the **WebServer** IP address, click on the **Details** drop down menu above these instructions, and then click **Show**.
+
+2. Open a new web browser tab, paste the _WebServer_ IP address and press Enter.
 
     The web application will be displayed, showing information about the EC2 instance.
 
-17. Click the **RDS** link at the top of the page.
+3. Click the **RDS** link at the top of the page.
 
     You will now configure the application to connect to your database.
 
-18. Configure the following settings:
+4. Configure the following settings:
 
     - **Endpoint:** Paste the Endpoint you copied to a text editor earlier
     - **Database:** `lab`
@@ -232,8 +236,8 @@ In this task, you will open a web application running on your web server and con
 
     The Address Book application is using the RDS database to store information.
 
-19. Test the web application by adding, editing and removing contacts.
+5. Test the web application by adding, editing and removing contacts.
 
     The data is being persisted to the database and is automatically replicating to the second Availability Zone.
-
-&nbsp;
+</p>
+</details>
