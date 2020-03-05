@@ -1,3 +1,131 @@
+<header>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </header>
+ <!--include:Logo-->
+ <style type="text/css">
+    body {
+    font-family:  "Roboto", "Helvetica", sans-serif;
+    font-size: 12pt;
+    font-color: Gray;
+    line-height: 1.6;
+    margin: 50px;
+    }
+    p {
+    list-style-position: inside;
+    }
+    #ssb_blue {
+    background-color: #257ACF;
+    font-weight: bold;
+    font-size: 90%;
+    color: white;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+    }
+    #ssb_s3_blue {
+    background-color: #329ad6;
+    font-weight: bold;
+    font-size: 90%;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    #ssb_voc_grey {
+    background-color: #F2F3F4;
+    font-weight: normal;
+    font-size: 90%;
+    color: black;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    white-space: nowrap;
+    }
+    #ssb_grey {
+    background-color: #DEDEDE;
+    font-weight: bold;
+    font-size: 90%;
+    color: #444;
+    position: relative;
+    top:-1px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+    }
+    #ssl_alexa_ocean {
+    color: #00a0d2;
+    font-weight: bold;
+    }
+    #ssb_services {
+    background-color: #232f3e;
+    font-weight: bold;
+    font-size: 90%;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    #ssb_orange {
+    background-color:#ec7211;
+    font-weight:bold;
+    font-size:90%;
+    color:white;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:10px;
+    padding-right:10px;
+    white-space:
+    nowrap;
+    }
+    #ssbox_cloudformation_blue {
+    font-weight:bold;
+    background-color:#f1faff;
+    font-size:90%;
+    border-color:#00A1C9;
+    border-width:1px;
+    border-style:solid;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:10px;
+    padding-right:10px;
+    }
+    #ssb_ssm_white {
+    background-color:white;
+    font-weight:bold;
+    font-size:90%;
+    color:#545b64;
+    border-color:#545b64;
+    border-radius:2px;
+    border-width:1px;
+    border-style:solid;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:10px;
+    padding-right:10px;
+    }
+ </style>
+
+
 Module 1: Deploy a webapp on EC2
 ===
 
@@ -164,8 +292,7 @@ In this task, you will create two additional subnets in a second Availability Zo
   </p>
 </details>
 
-
-    Your VPC now has public and private subnets configured in two Availability Zones:
+Your VPC now has public and private subnets configured in two Availability Zones:
 
 
 ### 2. Create an EC2 instance
