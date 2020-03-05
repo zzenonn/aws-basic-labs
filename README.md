@@ -53,10 +53,12 @@ This workshop will use Git as a platform medium, so it will be handy if you alre
 
 ## Modules
 
-This workshop is broken up into multiple modules.
+This workshop is broken up into multiple modules which include hands-on labs.
 You must complete each module before proceeding to the next.
 
 1. [Deploy a Network and Webapp on AWS](../../tree/lab-01)
 2. [Add a Database to Your Infrastructure](../../tree/lab-02)
 3. [Scale and Load Balance Your Architecture](../../tree/lab-03)
+
+The slides for this workshop can be found [here](https://www.slideshare.net/AmazonWebServices/awsome-day-2019-detroit)
 
