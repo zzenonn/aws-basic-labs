@@ -1,5 +1,5 @@
 
-Module 1: Deploy a Network and Webapp on EC2
+Module 1: Deploy a Network and Webapp on AWS
 ===
 
 In this module, we'll walk through how to create an EC2 instance on AWS, 
