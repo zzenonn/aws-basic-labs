@@ -46,36 +46,36 @@ In this task, you will create a security group to allow your web server to acces
   <summary><strong>Step-by-step instructions (expand for details)</strong></summary>
   <p>
 
-5. In the **AWS Management Console**, on the **Services** menu, click **VPC**.
+1. In the **AWS Management Console**, on the **Services** menu, click **VPC**.
 
-6. In the left navigation pane, click **Security Groups**.
+2. In the left navigation pane, click **Security Groups**.
 
-7. Click **Create security group** and then configure:
+3. Click **Create security group** and then configure:
 
    - **Security group name:** `DB Security Group`
    - **Description:** `Permit access from Web Security Group`
    - **VPC:** _Lab VPC_
 
-8. Click **Create** then click **Close**
+4. Click **Create** then click **Close**
 
     You will now add a rule to the security group to permit inbound database requests.
 
-9. Select **DB Security Group**.
+5. Select **DB Security Group**.
 
-10. Click the **Inbound Rules** tab.
+6. Click the **Inbound Rules** tab.
 
     The security group currently has no rules. You will add a rule to permit access from the _Web Security Group_.
 
-11. Click **Edit rules**
+7. Click **Edit rules**
 
-12. Click **Add Rule** then configure:
+8. Click **Add Rule** then configure:
 
     - **Type:** _MySQL/Aurora (3306)_
     - **CIDR, IP, Security Group or Prefix List:** Type `sg` and then select _Web Security Group_.
 
     This configures the Database security group to permit inbound traffic on port 3306 from any EC2 instance that is associated with the _Web Security Group_.
 
-13. Click **Save rules** then click **Close**
+9. Click **Save rules** then click **Close**
 
     You will use this security group when launching the Amazon RDS database.
     
