@@ -13,6 +13,7 @@ The services we'll use in this workshop include (but are not limited to):
 - [Amazon VPC](https://aws.amazon.com/vpc)
 - [AWS Autoscaling](https://aws.amazon.com/autoscaling/)
 - [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/)
+
 See the diagram below for the completed architecture.
 
 ![Architecture](__assets/architecture.png)
