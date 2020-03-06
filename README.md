@@ -192,10 +192,11 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
   2. Click the *Launch Instance** button. This will start a step-by-step wizard for creating a new EC2 instance.
   3. In the `Step 1` screen: select an **Amazon Linux 2** AMI. 
   4. In the `Step 2` screen: select a `t3.micro` instance. 
-  5. In the `Step 3` screen: all the default values should be OK, however, confirm that the following configuration is set:
+  5. In the `Step 3` screen: make sure the following configuration is set:
      1. For `Network`, the VPC you created in the previous step is selected.
-     2. For `Auto-assign public IP`, make sure this is enabled.
-     3. Expand advanced details, and in the Userdata section, pase the following text:
+     2. Use `Public Subnet 2`
+     3. For `Auto-assign public IP`, make sure this is enabled.
+     4. Expand advanced details, and in the Userdata section, pase the following text:
      ```bash
      #!/bin/bash
      # Install Apache Web Server and PHP
