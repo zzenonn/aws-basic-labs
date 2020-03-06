@@ -261,13 +261,13 @@ has `chmod 400` permissions.
   ```
 
   3. Locate your EC2 instance's **public IPv4 address** in your EC2 dashboard. It should be in the **Desription** tab when selected.
-  4. To establish an SSH connection, run `ssh -i [your keyfile] ubuntu@[public IPv4 address]`.
+  4. To establish an SSH connection, run `ssh -i [your keyfile] ec2-user@[public IPv4 address]`.
      Substitute the appropriate values for `[your keyfile]` and `[public IPv4 address]`.
 
   ```
   e.g.
 
-  ssh -i ~/keys/my-keyfile.pem ubuntu@127.0.0.1
+  ssh -i ~/keys/my-keyfile.pem ec2-user@127.0.0.1
   ```
   5. You should see a welcome message if an SSH connection has been successfully established.
   
