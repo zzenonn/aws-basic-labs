@@ -58,16 +58,19 @@ The wizard will also create a NAT Gateway, which is used to provide internet con
   <p>
     
   1. In the AWS Management Console, on the ***Services** menu, click **VPC**.
-  2. Click **Launch VPC Wizard**
-  3. In the left navigation pane, click **VPC with Public and Private Subnets** (the second option).
-  4. Click Select then configure:
+  2. In the left navigation pane click **Elastic IP Addresses**
+  3. Click **Allocate New Address**
+  4. Click **Allocate**
+  5. Click **Launch VPC Wizard**
+  6. In the left navigation pane, click **VPC with Public and Private Subnets** (the second option).
+  7. Click Select then configure:
       - **VPC name**: `Lab VPC`
       - **Availability Zone**: Select the *first* Availability Zone
       - **Public subnet name**: `Public Subnet 1`
       - **Availability Zone**: Select the *first* Availability Zone (the same as used above)
       - **Private subnet name**: `Private Subnet 1`
       - **Elastic IP Allocation ID**: Click in the box and select the displayed IP address
-  5. Click **Create VPC**
+  8. Click **Create VPC**
 
 
   </p>
