@@ -193,7 +193,7 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
   3. In the `Step 1` screen: select an **Amazon Linux 2** AMI. 
   4. In the `Step 2` screen: select a `t3.micro` instance. 
   5. In the `Step 3` screen: all the default values should be OK, however, confirm that the following configuration is set:
-     1. For `Network`, the default VPC is selected.
+     1. For `Network`, the VPC you created in the previous step is selected.
      2. For `Auto-assign public IP`, make sure this is enabled.
      3. Expand advanced details, and in the Userdata section, pase the following text:
      ```bash
