@@ -238,5 +238,6 @@ In this task, you will open a web application running on your web server and con
     The data is being persisted to the database and is automatically replicating to the second Availability Zone.
 </p>
 </details>
+
 **Next:** [Scale and Load Balance Your Architecture](../../tree/lab-03)
 
