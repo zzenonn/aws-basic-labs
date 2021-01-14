@@ -284,4 +284,4 @@ In the next modules, we'll look into ways we can improve on that process, as wel
 can use EC2 instances in creative ways to improve web application durability and scalability.
 
 
-**Next:** [Add a Database to Your Infrastructure](../../lab-02)
+**Next:** [Add a Database to Your Infrastructure](../../tree/lab-02)
