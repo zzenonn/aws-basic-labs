@@ -180,7 +180,7 @@ we'll create and prepare an EC2 instance to run a server we can use to host a we
 
 #### High-level instructions
 
-Use the console or AWS CLI to create an Amazon EC2 `t3.micro` instance, using an `Amazon Linux 2` AMI.
+Use the console or AWS CLI to create an Amazon EC2 `t3.micro` instance, using an `Amazon Linux 1` AMI.
 Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, and has an assigned public IPv4 address.
 
 <details>
@@ -190,7 +190,7 @@ Make sure that this instance is publicly accessible both for `SSH` and `HTTP`, a
   1. In the console, choose **Services** at the top-left menu, and choose **EC2** under Compute.
     
   2. Click the *Launch Instance** button. This will start a step-by-step wizard for creating a new EC2 instance.
-  3. In the `Step 1` screen: select an **Amazon Linux 2** AMI. 
+  3. In the `Step 1` screen: search for the **ami-0c39828420ba005f6** AMI. 
   4. In the `Step 2` screen: select a `t3.micro` instance. 
   5. In the `Step 3` screen: make sure the following configuration is set:
      1. For `Network`, the VPC you created in the previous step is selected.
